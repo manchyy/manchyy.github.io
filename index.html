@@ -1,15 +1,42 @@
 <!DOCTYPE html>
 <html>
 
+    <!-- disable inspect element -->
+    <script>
+        document.addEventListener('contextmenu', event => event.preventDefault());
+        document.onkeypress = function (event) {
+            event = (event || window.event);
+            if (event.keyCode == 123) {
+                return false;
+            }
+        }
+        document.onmousedown = function (event) {
+            event = (event || window.event);
+            if (event.keyCode == 123) {
+                return false;
+            }
+        }
+        document.onkeydown = function (event) {
+            event = (event || window.event);
+            if (event.keyCode == 123) {
+                return false;
+            }
+        }
+    </script>
+
+
     <head>
         <title>y fletch</title>
         <link rel="stylesheet" href="css/styles.css">
     </head>
 
     <body style="background-color: dimgray;">
-        <h1 style="text-align: center;">benzinhook.cc</h1>
-        <p1 style="text-align: center;">100% never vac runescape ahk scripts</p>
-        <p2 style="text-align: center;">this was made in under an hour</p>
+        <h1 style="text-align: center;">Hi, I'm manchyy</h1>
+        <p1 style="text-align: center;">I'm a 2nd year CSSE Student at NUIM</p>
+            <br>
+        <button class="button buttonSteam">Steam</button>
+        <button class="button buttonSteam">Github</button>
+        <button class="button buttonSteam">RS3 HiScores</button>
     </body>
     
 </html>
