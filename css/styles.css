@@ -25,12 +25,14 @@ h1,p1,p2
 
 h1
 {
+    font-family: Arial, Helvetica, sans-serif;
     font-size:80px;
     line-height: 100px;
     margin-top: -100px;
 }
 p1
 {
+    line-height: 15px;
     font-size:30px;
 }
 p2
@@ -47,11 +49,25 @@ p2
     border: 2px solid white;
     padding: 8px 16px;
     border-radius: 8px;
-    line-height: 4em;
+    line-height: 2em;
 }
-
 .button:hover
 {
     background-color: rgba(255,255,255,0.5);
     transition-duration: 0.2s;
+}
+
+.dotaButton
+{
+    background:url(/images/manaBreak.png);
+    border: 2px solid white;
+    border-radius: 8px;
+    width: 128px;
+    height: 128px;
+    margin: 15px;
+    
+}
+.dotaButton:active
+{
+    background: rgba(0,0,0,0.5),url(/images/manaBreak.png);;
 }
