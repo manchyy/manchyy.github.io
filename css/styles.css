@@ -67,7 +67,3 @@ p2
     margin: 15px;
     
 }
-.dotaButton:active
-{
-    background: rgba(0,0,0,0.5),url(/images/manaBreak.png);;
-}
