@@ -12,7 +12,7 @@ h1,p1,p2
 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: white;
-    text-shadow: 0px 3px 1px black;
+    text-shadow: 1px 2px 1px black;
     
     left: 0;
     position: absolute;
@@ -57,7 +57,7 @@ p2
     transition-duration: 0.2s;
 }
 
-.dotaButton
+/*.dotaButton
 {
     background:url(/images/manaBreak.png);
     border: 2px solid white;
@@ -66,4 +66,4 @@ p2
     height: 128px;
     margin: 15px;
     
-}
+}*/
