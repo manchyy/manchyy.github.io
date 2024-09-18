@@ -1,10 +1,23 @@
 ---
+//TODO display money as unique visitors
 
+    const currentDate = new Date();
+    const formattedDate = (date) => {
+        const currentDate = date;
+
+        const days = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'];
+        const day = days[currentDate.getDay()];
+
+        const hours = currentDate.getHours().toString().padStart(2, '0');
+        const minutes = currentDate.getMinutes().toString().padStart(2, '0');
+
+        return `${day} / ${hours}:${minutes} / $0`
+    }
 ---
 
 <div class="timer">
     <hr>
-    THU / 17:38 / $2000
+    {formattedDate(currentDate)}
 </div>
 
 <style>
