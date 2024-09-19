@@ -2,20 +2,19 @@
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 const avatar = 'https://avatars.akamai.steamstatic.com/b8492722bac102cf91354090ddf82f0b8945f6c1_full.jpg'
-import Avatar from '../components/react/Avatar'
+import DiscordCard from '../components/react/DiscordCard'
+import "/node_modules/flag-icons/css/flag-icons.min.css";
+
+const flag = "lt"
+const description = "Software Engineer Graduate\nMechanical Keyboard Enjoyer"
+
 ---
 
 <Layout title="nmant.dev">
 	<main>
-		<!-- <h1><span class="text-gradient">nmant.dev</span></h1> -->
-		
 		<div class="avatar">
-			<Avatar id="202862812115107851" client:load />
+			<DiscordCard id="202862812115107851" flag={flag} description={description} client:load />
 		</div>
-	
-		<!-- <p class="instructions">
-			<strong>Work-in-Progress</strong> personal site ;)
-		</p> -->
 	</main>
 </Layout>
 
