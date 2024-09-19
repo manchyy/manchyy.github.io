@@ -2,19 +2,20 @@
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 const avatar = 'https://avatars.akamai.steamstatic.com/b8492722bac102cf91354090ddf82f0b8945f6c1_full.jpg'
+import Avatar from '../components/react/Avatar'
 ---
 
 <Layout title="nmant.dev">
 	<main>
-		<h1><span class="text-gradient">nmant.dev</span></h1>
+		<!-- <h1><span class="text-gradient">nmant.dev</span></h1> -->
 		
 		<div class="avatar">
-			<img src={avatar} alt="manchyy" width="300" height="300">
+			<Avatar id="202862812115107851" client:load />
 		</div>
 	
-		<p class="instructions">
+		<!-- <p class="instructions">
 			<strong>Work-in-Progress</strong> personal site ;)
-		</p>
+		</p> -->
 	</main>
 </Layout>
 
