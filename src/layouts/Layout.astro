@@ -4,25 +4,28 @@ interface Props {
 }
 
 const { title } = Astro.props;
+import { ViewTransitions, fade } from 'astro:transitions';
 import Header from '../components/Header.astro';
 import Footer from "../components/react/Footer"
-
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<meta name="description" content="personal site" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<ViewTransitions />
 	</head>
 	<body>
-		<Header/>
-		<slot />
-		<Footer client:load/>
+		<main transition:animate={fade({ duration: '0.2s' })}>
+			<Header/>
+			<slot />
+			<Footer client:load/>
+		</main>
 	</body>
 </html>
 <style is:global>
@@ -49,6 +52,7 @@ import Footer from "../components/react/Footer"
 	html {
 		font-family: 'HelveticaNeue', sans-serif;
 		background: #010101;
+		padding-bottom: 6.25rem; /* prevent footer overlap */
 	}
 
 	hr {

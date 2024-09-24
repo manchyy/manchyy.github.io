@@ -1,0 +1,29 @@
+---
+const url = Astro.request.url;
+const curpath = new URL(url).pathname;
+---
+<div class="headercontainer">
+    <a href="/" class={curpath === '/' ? 'active' : ''}>Home&nbsp;&nbsp;</a>
+    <a href="/projects" class={url.includes('/projects') ? 'active' : ''}>Projects&nbsp;&nbsp;</a>
+    <a href="/skills"  class={url.includes('/skills') ? 'active' : ''}>Skills&nbsp;&nbsp;</a>
+    <a href="/blog" class={url.includes('/blog') ? 'active' : ''}>Blog</a>
+</div>
+<hr>
+
+<style>
+    .headercontainer{
+        margin-top: 4rem;
+        font-size: 3rem;
+        text-align: center;
+        color: white;
+    }
+
+    .headercontainer a {
+        text-decoration: none;
+        color:#898989;
+    }
+
+    .headercontainer a:hover, .headercontainer a.active {
+        color: #e6991d;
+    }
+</style>

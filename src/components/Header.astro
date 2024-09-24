@@ -1,26 +1,9 @@
 ---
+import Navigation from './Navigation.astro';
 ---
-<div class="headercontainer">
-    <a href="">Home</a>
-    <a href="">About</a>
-    <a href="">Blog</a>
-</div>
-<hr>
 
-<style>
-    .headercontainer{
-        margin-top: 4rem;
-        font-size: 3rem;
-        text-align: center;
-        color: white;
-    }
-
-    .headercontainer a {
-        text-decoration: none;
-        color:#898989;
-    }
-
-    .headercontainer a:hover {
-        color: #e6991d;
-    }
-</style>
+<header>
+    <nav>
+        <Navigation/>
+    </nav>
+</header>
