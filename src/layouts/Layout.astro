@@ -1,74 +1,78 @@
 ---
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
-import { ViewTransitions, fade } from 'astro:transitions';
-import Header from '../components/Header.astro';
-import Footer from "../components/react/Footer"
+import { ViewTransitions, fade } from "astro:transitions";
+import Header from "../components/Header.astro";
+import Footer from "../components/react/Footer";
 ---
 
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="personal site" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-		<ViewTransitions />
-	</head>
-	<body>
-		<main transition:animate={fade({ duration: '0.2s' })}>
-			<Header/>
-			<slot />
-			<Footer client:load/>
-		</main>
-	</body>
+<html lang="en" class="custom-cursor">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="personal site" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <ViewTransitions />
+  </head>
+  <body>
+    <main transition:animate={fade({ duration: "0.2s" })}>
+      <Header />
+      <slot />
+      <Footer client:load />
+    </main>
+  </body>
 </html>
 <style is:global>
-	:root {
-		--accent: 230, 153, 29;
-		--accent-light: 245, 198, 119; 
-		--accent-dark: 179, 119, 22; 
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
+  :root {
+    --accent: 230, 153, 29;
+    --accent-light: 245, 198, 119;
+    --accent-dark: 179, 119, 22;
+    --accent-gradient: linear-gradient(
+      45deg,
+      rgb(var(--accent)),
+      rgb(var(--accent-light)) 30%,
+      white 60%
+    );
+  }
 
-	@font-face {
-		font-family: 'HelveticaNeue';
-		src: url('/fonts/helveticaneue.woff') format('woff');
-		font-weight: normal;
-		font-style: normal;
-		font-display: swap;
-	}
+  @font-face {
+    font-family: "HelveticaNeue";
+    src: url("/fonts/helveticaneue.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
 
-	html {
-		font-family: 'HelveticaNeue', sans-serif;
-		background: #010101;
-		padding-bottom: 6.25rem; /* prevent footer overlap */
-	}
+  html {
+    font-family: "HelveticaNeue", sans-serif;
+    background: #010101;
+    padding-bottom: 6.25rem; /* prevent footer overlap */
+  }
 
-	hr {
-        height: 1px;
-        border: none;
-        background-color: #888888;
-    }
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
+  hr {
+    height: 1px;
+    border: none;
+    background-color: #888888;
+  }
+  code {
+    font-family:
+      Menlo,
+      Monaco,
+      Lucida Console,
+      Liberation Mono,
+      DejaVu Sans Mono,
+      Bitstream Vera Sans Mono,
+      Courier New,
+      monospace;
+  }
+  .custom-cursor,
+  .custom-cursor * {
+    cursor: url("/cursor.png"), auto !important;
+  }
 </style>
