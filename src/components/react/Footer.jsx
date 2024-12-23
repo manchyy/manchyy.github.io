@@ -37,6 +37,11 @@ const Footer = () => {
             background-color: #010101;
             padding: 1rem;
           }
+          @media (max-width: 768px) {
+            .timer{
+            height: 3rem;
+        }
+    }
         `}
       </style>
     </div>
