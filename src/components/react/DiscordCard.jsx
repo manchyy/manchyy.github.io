@@ -73,14 +73,14 @@ const DiscordCard = ({ id }) => {
         <p>
           I’m a Computer Science & Software Engineering graduate based in
           Ireland with a strong focus on frontend development. I specialize in
-          building modern, efficient, and engaging user interfaces using Astro,
-          SolidJS, and React.
+          building modern, efficient and engaging user interfaces using Astro,
+          SolidJS and React.
         </p>
         <p>
           Outside of coding, I’m passionate about video games, computer
           hardware, mechanical keyboards, and cars. I enjoy building custom
-          keyboards, putting together PCs, and learning more about cars and
-          their engineering.
+          keyboards, putting together PCs, learning more about cars and their
+          engineering.
         </p>
       </div>
     </div>

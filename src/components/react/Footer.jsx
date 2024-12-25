@@ -38,10 +38,10 @@ const Footer = () => {
             padding: 1rem;
           }
           @media (max-width: 768px) {
-            .timer{
-            height: 3rem;
-        }
-    }
+            .timer {
+              height: 3rem;
+            }
+          }
         `}
       </style>
     </div>
