@@ -2,9 +2,13 @@ const footerStyle = {
   userSelect: "none",
 };
 
+const currentYear = new Date().getFullYear();
+
 const Footer = () => {
   return (
-    <div style={footerStyle}>copyright (c) 2025. all rights reserved.</div>
+    <div style={footerStyle}>
+      copyright (c) {currentYear}. all rights reserved.
+    </div>
   );
 };
 

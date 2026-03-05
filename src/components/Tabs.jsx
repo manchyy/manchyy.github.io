@@ -1,20 +1,29 @@
-const homeContent = `I'm a software developer from Ireland. My interests include video games, computer hardware, mechanical keyboards, cars and lifting.
-
-B.Sc. in Computer Science & Software Engineering from Maynooth University.`;
+const homeContent = `I'm a software developer from Ireland. My interests include video games, computer hardware, mechanical keyboards, cars and lifting.`;
+const homeContent2 = `B.Sc. in Computer Science & Software Engineering from Maynooth University.`;
 
 const aboutContent = `ryzen 9800x3d
     rtx 5070ti
     32gb ddr5 6000mhz
-    asus b650e-e
+    asus b850-g
     nh d15 g2
-    nzxt h7 flow
+    wd sn550 1tb nvme
+    crucial mx500 1tb ssd
+    jonsbo d32 pro
+    nf-a14x25 g2 x2
+    nf-a12x25 g2 
 `;
 
 const techstackContent = `backend: python, java
-frontend: javascript, react, astro
-databases: postresql, mongodb
-misc: unix, docker
+frontend:  react, astro
+databases: postresql, mongodb, dataverse
+misc: unix, docker, power apps/automate/pages
 `;
+
+const recognioContent = `final year project fullstack application.
+flask backend, solidjs frontend, mongodb database.\n
+utilized intel openvino pretrained models to do real-time facial recognition.
+data presented in a solidjs page with mui component library and
+apexcharts visualization charts`;
 
 const blogContent = `tbd :)`;
 
@@ -33,7 +42,12 @@ const Tabs = () => {
         Home
       </label>
       <div class="panel" tabindex="1">
+        <h2>Bio</h2>
         <p style={{ whiteSpace: "pre-line" }}>{homeContent}</p>
+        <h2>Education</h2>
+        <p style={{ whiteSpace: "pre-line" }}>{homeContent2}</p>
+        <h2>Tech stack</h2>
+        <p style={{ whiteSpace: "pre-line" }}>{techstackContent}</p>
       </div>
       {/*  */}
       <input
@@ -47,10 +61,10 @@ const Tabs = () => {
         About
       </label>
       <div class="panel" tabindex="1">
-        <strong>PC Specs</strong>
+        <h2>PC Specs</h2>
         <p style={{ whiteSpace: "pre-line" }}>{aboutContent}</p>
-        <strong>Tech stack</strong>
-        <p style={{ whiteSpace: "pre-line" }}>{techstackContent}</p>
+        {/* <h2>Tech stack</h2>
+        <p style={{ whiteSpace: "pre-line" }}>{techstackContent}</p> */}
       </div>
       <input
         class="radiotab"
@@ -63,16 +77,11 @@ const Tabs = () => {
         Projects
       </label>
       <div class="panel" tabindex="1">
-        <strong>recogn.io</strong>
-        <p style={{ whiteSpace: "pre-line" }}>
-          final year project fullstack application. flask backend, solidjs
-          frontend, mongodb database
-        </p>
-        <strong>wordle solver</strong>
-        <p style={{ whiteSpace: "pre-line" }}>word guesser written in java</p>
+        <h2>recogn.io</h2>
+        <p style={{ whiteSpace: "pre-line" }}>{recognioContent}</p>
       </div>
-      {/*  */}
-      <input
+      {/* maybe one day;) */}
+      {/* <input
         class="radiotab"
         name="tabs"
         tabindex="4"
@@ -84,7 +93,7 @@ const Tabs = () => {
       </label>
       <div class="panel" tabindex="1">
         <p style={{ whiteSpace: "pre-line" }}>{blogContent}</p>
-      </div>
+      </div> */}
     </div>
   );
 };
