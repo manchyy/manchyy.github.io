@@ -5,7 +5,7 @@ const hrContainer = {
 const Hr = () => {
   return (
     <div style={hrContainer}>
-      <hr class="cs-hr" />
+      <hr className="cs-hr" />
     </div>
   );
 };

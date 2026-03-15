@@ -15,7 +15,7 @@ const aboutContent = `ryzen 9800x3d
 
 const techstackContent = `backend: python, java
 frontend:  react, astro
-databases: postresql, mongodb, dataverse
+databases: postgresql, mongodb, dataverse
 misc: unix, docker, power apps/automate/pages
 `;
 
@@ -31,17 +31,17 @@ const Tabs = () => {
   return (
     <div className="cs-tabs">
       <input
-        class="radiotab"
+        className="radiotab"
         name="tabs"
-        tabindex="1"
+        tabIndex="1"
         type="radio"
         id="tabone"
         defaultChecked
       />
-      <label class="label" for="tabone">
+      <label className="label" htmlFor="tabone">
         Home
       </label>
-      <div class="panel" tabindex="1">
+      <div className="panel" tabIndex="1">
         <h2>Bio</h2>
         <p style={{ whiteSpace: "pre-line" }}>{homeContent}</p>
         <h2>Education</h2>
@@ -51,32 +51,32 @@ const Tabs = () => {
       </div>
       {/*  */}
       <input
-        class="radiotab"
+        className="radiotab"
         name="tabs"
-        tabindex="2"
+        tabIndex="2"
         type="radio"
         id="tabtwo"
       />
-      <label class="label" for="tabtwo">
+      <label className="label" htmlFor="tabtwo">
         About
       </label>
-      <div class="panel" tabindex="1">
+      <div className="panel" tabIndex="1">
         <h2>PC Specs</h2>
         <p style={{ whiteSpace: "pre-line" }}>{aboutContent}</p>
         {/* <h2>Tech stack</h2>
         <p style={{ whiteSpace: "pre-line" }}>{techstackContent}</p> */}
       </div>
       <input
-        class="radiotab"
+        className="radiotab"
         name="tabs"
-        tabindex="3"
+        tabIndex="3"
         type="radio"
         id="tabthree"
       />
-      <label class="label" for="tabthree">
+      <label className="label" htmlFor="tabthree">
         Projects
       </label>
-      <div class="panel" tabindex="1">
+      <div className="panel" tabIndex="1">
         <h2>recogn.io</h2>
         <p style={{ whiteSpace: "pre-line" }}>{recognioContent}</p>
       </div>
@@ -84,7 +84,7 @@ const Tabs = () => {
       {/* <input
         class="radiotab"
         name="tabs"
-        tabindex="4"
+        tabIndex="4"
         type="radio"
         id="tabfour"
       />
