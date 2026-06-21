@@ -1,11 +1,42 @@
 #root {
   max-width: 720px;
   max-height: 100%;
+  padding: 2rem;
   margin: 0 auto;
-  padding: 2rem; 
-  /* text-align: center; */
 }
 
-/* body {
-  background-color: black;
-} */
+@media (min-width: 720px) {
+  #root {
+    margin-left: round(calc(50vw - 360px), 1px);
+    margin-right: auto;
+  }
+}
+
+dialog.cs-dialog {
+  font-family: inherit;
+  width: 350px;
+  max-width: 90vw;
+  margin: 0;
+  left: round(calc(50vw - min(175px, 45vw)), 1px);
+  top: round(calc(50vh - 90px), 1px);
+}
+
+.blog-post-title {
+  cursor: pointer;
+  color: var(--text);
+  font-weight: bold;
+}
+
+.blog-post-title:hover {
+  color: var(--accent);
+}
+
+.blog-read-more {
+  cursor: pointer;
+  color: var(--text-3);
+  font-size: 14px;
+}
+
+.blog-read-more:hover {
+  color: var(--accent);
+}

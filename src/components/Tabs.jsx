@@ -1,3 +1,8 @@
+import { useState, useEffect } from "react";
+import Blog from "./Blog";
+import AdminPanel from "./AdminPanel";
+import { useAuth } from "../context/AuthContext";
+
 const homeContent = `I'm a software developer from Ireland. My interests include video games, computer hardware, mechanical keyboards, cars and lifting.`;
 const homeContent2 = `B.Sc. in Computer Science & Software Engineering from Maynooth University.`;
 
@@ -25,18 +30,28 @@ utilized intel openvino pretrained models to do real-time facial recognition.
 data presented in a solidjs page with mui component library and
 apexcharts visualization charts`;
 
-const blogContent = `tbd :)`;
-
 const Tabs = () => {
+  const { isAdmin } = useAuth();
+  const [activeTab, setActiveTab] = useState("tabone");
+
+  // Reset to Home tab if admin logs out while on the Admin tab
+  useEffect(() => {
+    if (!isAdmin && activeTab === "tabfive") {
+      setActiveTab("tabone");
+    }
+  }, [isAdmin, activeTab]);
+
   return (
     <div className="cs-tabs">
+      {/* Home */}
       <input
         className="radiotab"
         name="tabs"
         tabIndex="1"
         type="radio"
         id="tabone"
-        defaultChecked
+        checked={activeTab === "tabone"}
+        onChange={() => setActiveTab("tabone")}
       />
       <label className="label" htmlFor="tabone">
         Home
@@ -49,13 +64,16 @@ const Tabs = () => {
         <h2>Tech stack</h2>
         <p style={{ whiteSpace: "pre-line" }}>{techstackContent}</p>
       </div>
-      {/*  */}
+
+      {/* About */}
       <input
         className="radiotab"
         name="tabs"
         tabIndex="2"
         type="radio"
         id="tabtwo"
+        checked={activeTab === "tabtwo"}
+        onChange={() => setActiveTab("tabtwo")}
       />
       <label className="label" htmlFor="tabtwo">
         About
@@ -63,15 +81,17 @@ const Tabs = () => {
       <div className="panel" tabIndex="1">
         <h2>PC Specs</h2>
         <p style={{ whiteSpace: "pre-line" }}>{aboutContent}</p>
-        {/* <h2>Tech stack</h2>
-        <p style={{ whiteSpace: "pre-line" }}>{techstackContent}</p> */}
       </div>
+
+      {/* Projects */}
       <input
         className="radiotab"
         name="tabs"
         tabIndex="3"
         type="radio"
         id="tabthree"
+        checked={activeTab === "tabthree"}
+        onChange={() => setActiveTab("tabthree")}
       />
       <label className="label" htmlFor="tabthree">
         Projects
@@ -80,20 +100,45 @@ const Tabs = () => {
         <h2>recogn.io</h2>
         <p style={{ whiteSpace: "pre-line" }}>{recognioContent}</p>
       </div>
-      {/* maybe one day;) */}
-      {/* <input
-        class="radiotab"
+
+      {/* Blog */}
+      <input
+        className="radiotab"
         name="tabs"
         tabIndex="4"
         type="radio"
         id="tabfour"
+        checked={activeTab === "tabfour"}
+        onChange={() => setActiveTab("tabfour")}
       />
-      <label class="label" for="tabfour">
+      <label className="label" htmlFor="tabfour">
         Blog
       </label>
-      <div class="panel" tabindex="1">
-        <p style={{ whiteSpace: "pre-line" }}>{blogContent}</p>
-      </div> */}
+      <div className="panel" tabIndex="1">
+        <h2>Blog</h2>
+        <Blog active={activeTab === "tabfour"} />
+      </div>
+
+      {/* Admin — only visible when logged in */}
+      {isAdmin && (
+        <>
+          <input
+            className="radiotab"
+            name="tabs"
+            tabIndex="5"
+            type="radio"
+            id="tabfive"
+            checked={activeTab === "tabfive"}
+            onChange={() => setActiveTab("tabfive")}
+          />
+          <label className="label" htmlFor="tabfive">
+            Admin
+          </label>
+          <div className="panel" tabIndex="1">
+            <AdminPanel />
+          </div>
+        </>
+      )}
     </div>
   );
 };
